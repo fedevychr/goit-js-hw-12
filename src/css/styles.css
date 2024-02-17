@@ -5,11 +5,9 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -22,4 +20,151 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.loader {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #242424;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form {
+  padding-top: 36px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.form-search-input {
+  width: 272px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  transition-property: background-color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+}
+
+.form-search-input:hover {
+  border-color: #000000;
+}
+
+.form-search-input:focus,
+.form-search-input:focus-visible {
+  border-color: #4e75ff;
+  outline: #4e75ff;
+}
+
+.form-search-input:disabled {
+  border-color: #808080;
+  background-color: #fafafa;
+  color: #808080;
+}
+
+.container {
+  max-width: 1460px;
+  padding: 32px 10px;
+  gap: 32px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  font-style: normal;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background-color: #4e75ff;
+  color: #ffffff;
+  transition: background-color 250ms linear;
+}
+
+.button:hover {
+  background-color: #6c8cff;
+}
+
+.button:disabled {
+  color: #989898;
+  background-color: #cfcfcf;
+}
+
+.hidden {
+  display: none;
+}
+
+/* GALLERY */
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.gallery-item {
+  flex-basis: calc((100% - 48px) / 3);
+  height: 200px;
+  transition: transform 250ms linear;
+}
+
+.gallery-item:hover {
+  transform: scale(1.04);
+}
+
+.gallery-link {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-img {
+  width: 300px;
+}
+
+/* GALLERY */
+
+body .iziToast>.iziToast-close {
+  background: url('../img/close-min.svg') no-repeat 50% 50%;
+  opacity: 1;
+}
+
+body .iziToast>.iziToast-close:hover {
+  opacity: 0.6;
 }
